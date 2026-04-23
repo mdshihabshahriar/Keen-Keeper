@@ -4,6 +4,11 @@ import './index.css'
 import { RouterProvider } from 'react-router/dom'
 import { createBrowserRouter } from 'react-router'
 import RootLayout from './layout/RootLayout'
+import ErrorPage from './pages/ErrorPage/ErrorPage'
+import Stats from './pages/Stats/Stats'
+import Timeline from './pages/TImeline/Timeline'
+import FriendDetails from './pages/FriendDetails/FriendDetails'
+import HomePage from './pages/homepage/HomePage'
 
 const router = createBrowserRouter(
   [
@@ -12,18 +17,23 @@ const router = createBrowserRouter(
       element: <RootLayout></RootLayout>,
       children: [
         {
+          path: "/",
+          element: <HomePage></HomePage>
+        },
+        {
           path: "/details",
-          element: <h2>Details</h2>
+          element: <FriendDetails></FriendDetails>
         },
         {
           path: "/timeline",
-          element: <h2>Timeline</h2>
+          element: <Timeline></Timeline>
         },
         {
           path: "/stats",
-          element: <h2>Element</h2>
+          element: <Stats></Stats>
         },
       ],
+      errorElement: <ErrorPage></ErrorPage>
     },
   ]
 );
