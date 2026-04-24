@@ -3,6 +3,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { ImStatsDots } from 'react-icons/im';
 import { RiTimeLine } from 'react-icons/ri';
 import MyNavLink from './MyNavLink';
+import logoImg from '../../assets/logo.png'
 
 const Navbar = () => {
     const navItems = [
@@ -35,16 +36,16 @@ const Navbar = () => {
                         tabIndex="-1"
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {  
-                            navItems.map((item) => <li><MyNavLink to={item.path}>{item.icon} {item.text}</MyNavLink></li>)
+                            navItems.map((item, ind) => <li key={ind}><MyNavLink to={item.path}>{item.icon} {item.text}</MyNavLink></li>)
                         }
                     </ul>
                     </div>
-                    <a className="text-xl font-semibold">Keen<span className='text-green-900'>Keeper</span></a>
+                    <img src={logoImg} alt="" />
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {
-                            navItems.map((item) => <li><MyNavLink to={item.path}>{item.icon} {item.text}</MyNavLink></li>)
+                            navItems.map((item, ind) => <li key={ind}><MyNavLink to={item.path}>{item.icon} {item.text}</MyNavLink></li>)
                         }
                     </ul>
                 </div>
