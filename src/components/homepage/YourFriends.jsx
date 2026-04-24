@@ -1,4 +1,5 @@
 import React, { use } from 'react';
+import { Link } from 'react-router';
 
 const fetchData = fetch("/data.json").then(res => res.json());
 
@@ -13,7 +14,7 @@ const YourFriends = () => {
                 {
                     data.map((d) => (
                         
-                        <div key={d.id} className='bg-base-100 shadow-lg text-center p-8 rounded-lg space-y-2'>
+                        <Link to={`/details/${d.id}`} key={d.id} className='bg-base-100 shadow-lg text-center p-8 rounded-lg space-y-2'>
                             <img className='rounded-full mx-auto' src={d.picture} alt="" /> 
                             <h4 className='font-semibold text-xl text-green-900'>{d.name}</h4>
                             <span className='text-[#64748B] text-xs'>{d.days_since_contact}d ago</span>
@@ -32,7 +33,7 @@ const YourFriends = () => {
                                 : d.status === "Almost Due" ? "bg-yellow-500"
                                 : "bg-green-900"
                             }`}>{d.status}</p>
-                        </div>
+                        </Link>
                     ))
                 }
             </div>
