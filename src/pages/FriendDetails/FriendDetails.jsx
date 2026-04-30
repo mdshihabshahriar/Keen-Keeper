@@ -39,7 +39,7 @@ const FriendDetails = () => {
         }
 
     return (
-        <div className='w-9/12 mx-auto mt-20 grid grid-cols-3 gap-6'>
+        <div className='w-9/12 mx-auto min-h-[60vh] mt-20 grid grid-cols-1 md:grid-cols-3 gap-6'>
             <div className='col-span-1 space-y-4'>
                 <div className='bg-base-100 shadow-lg text-center p-6 rounded-xl space-y-3'>
                     <img src={expectedFriend.picture} className='w-24 h-24 rounded-full mx-auto' />
@@ -89,7 +89,7 @@ const FriendDetails = () => {
             </div>
 
             <div className='col-span-2 space-y-6'>
-                <div className='grid grid-cols-3 gap-4'>
+                <div className='grid md:grid-cols-3 gap-4'>
                 
                     <div className='bg-base-100 shadow rounded-xl p-6 text-center'>
                         <h4 className='text-3xl font-bold text-green-900'>

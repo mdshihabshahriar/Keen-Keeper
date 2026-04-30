@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import { use } from 'react';
 
 const fetchData = fetch("/data.json").then((res) => res.json());
 
@@ -11,7 +11,7 @@ const StatusCard = () => {
     const overdue = data.filter(item => item.status === "Overdue").length;
 
     return (
-        <div className='w-9/12 grid grid-cols-4 gap-3 mx-auto mt-10'>
+        <div className='w-9/12 grid grid-cols-2 md:grid-cols-4 gap-3 mx-auto mt-10'>
             <div className='p-8 shadow-lg bg-base-100 text-center rounded-xl'>
                 <h3 className='font-semibold text-3xl text-green-900'>{data.length}</h3>
                 <p className='text-[#64748B] text-lg'>Total Friends</p>

@@ -1,9 +1,9 @@
-import React from 'react';
 import { AiOutlineHome } from 'react-icons/ai';
 import { ImStatsDots } from 'react-icons/im';
 import { RiTimeLine } from 'react-icons/ri';
 import MyNavLink from './MyNavLink';
 import logoImg from '../../assets/logo.png'
+import { Link } from 'react-router';
 
 const Navbar = () => {
     const navItems = [
@@ -40,7 +40,7 @@ const Navbar = () => {
                         }
                     </ul>
                     </div>
-                    <img src={logoImg} alt="" />
+                    <Link to={"/"}><img src={logoImg} alt="" /></Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

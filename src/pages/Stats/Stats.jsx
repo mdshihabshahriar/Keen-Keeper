@@ -11,9 +11,9 @@ const Stats = () => {
     ]
     const total = interactions.filter(i => i.type === "Call").length + interactions.filter(i => i.type === "Text").length + interactions.filter(i => i.type === "Video").length
     return (
-        <div className='w-7/12 mx-auto min-h-[60vh]'>
-            <h2 className='text-4xl font-bold text-green-900 mt-4'>Friendship Analytics</h2>
-            <div className='shadow-xs p-10 rounded-lg border border-gray-300 mt-5'>
+        <div className='w-9/12 md:w-7/12 mx-auto mt-10 min-h-[60vh]'>
+            <h2 className='text-3xl md:text-4xl font-bold text-green-900 mt-4'>Friendship Analytics</h2>
+            <div className='shadow-xs p-10 rounded-lg border border-gray-300 mt-10'>
                 <h4 className='text-xl font-medium text-green-900'>By Interaction Type</h4>
                 <PieChart className='mx-auto' style={{ width: '100%', maxWidth: '300px', maxHeight: '80vh', aspectRatio: 1 }} responsive>
                 <Pie

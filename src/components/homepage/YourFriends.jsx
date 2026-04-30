@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import { use } from 'react';
 import { Link } from 'react-router';
 
 const fetchData = fetch("/data.json").then(res => res.json());
@@ -10,7 +10,7 @@ const YourFriends = () => {
     return (
         <div className='w-9/12 mx-auto mt-20'>
             <h4 className='text-2xl font-semibold text-green-900'>Your Friends</h4>
-            <div className='grid grid-cols-4 gap-3 mt-4'>
+            <div className='grid md:grid-cols-3 lg:grid-cols-4 gap-3 mt-4'>
                 {
                     data.map((d) => (
                         
