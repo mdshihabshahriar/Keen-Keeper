@@ -3,10 +3,13 @@ import { FiArchive, FiPhoneCall, FiVideo } from 'react-icons/fi';
 import { LuBellRing } from 'react-icons/lu';
 import { MdDeleteOutline, MdEmail, MdOutlineTextsms } from 'react-icons/md';
 import { useParams } from 'react-router';
+import { useInteractions } from '../../layout/RootLayout';
 
 const fetchData = fetch("/data.json").then(res => res.json());
 
 const FriendDetails = () => {
+
+    const { addInteraction } = useInteractions();
 
     const {id} = useParams()
     console.log(id)
@@ -109,9 +112,9 @@ const FriendDetails = () => {
                         Quick Check-In
                     </h4>
                     <div className='grid grid-cols-3 gap-4'>
-                        <button className='btn bg-base-200 flex flex-col h-20'><FiPhoneCall className='text-2xl'/>Call</button>
-                        <button className='btn bg-base-200 flex flex-col h-20'><MdOutlineTextsms className='text-2xl'/>Text</button>
-                        <button className='btn bg-base-200 flex flex-col h-20'><FiVideo className='text-2xl' />Video</button>
+                        <button onClick={() => addInteraction("Call", expectedFriend.name)} className='btn bg-base-200 flex flex-col h-20'><FiPhoneCall className='text-2xl'/>Call</button>
+                        <button onClick={() => addInteraction("Text", expectedFriend.name)} className='btn bg-base-200 flex flex-col h-20'><MdOutlineTextsms className='text-2xl'/>Text</button>
+                        <button onClick={() => addInteraction("Video", expectedFriend.name)} className='btn bg-base-200 flex flex-col h-20'><FiVideo className='text-2xl' />Video</button>
                     </div>
                 </div>
             </div>

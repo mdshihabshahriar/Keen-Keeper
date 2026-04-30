@@ -15,7 +15,7 @@ const YourFriends = () => {
                     data.map((d) => (
                         
                         <Link to={`/details/${d.id}`} key={d.id} className='bg-base-100 shadow-lg text-center p-8 rounded-lg space-y-2'>
-                            <img className='rounded-full mx-auto' src={d.picture} alt="" /> 
+                            <img className='rounded-full mx-auto w-24 h-24' src={d.picture} alt="" /> 
                             <h4 className='font-semibold text-xl text-green-900'>{d.name}</h4>
                             <span className='text-[#64748B] text-xs'>{d.days_since_contact}d ago</span>
                             <div className="flex justify-center gap-2 mt-2">
