@@ -1,13 +1,17 @@
-import React, { use } from 'react';
+import { use, useEffect, useState } from 'react';
 import { FiArchive, FiPhoneCall, FiVideo } from 'react-icons/fi';
 import { LuBellRing } from 'react-icons/lu';
 import { MdDeleteOutline, MdEmail, MdOutlineTextsms } from 'react-icons/md';
 import { useParams } from 'react-router';
 import { useInteractions } from '../../layout/RootLayout';
+import { HashLoader } from 'react-spinners';
+import { toast } from 'react-toastify';
 
 const fetchData = fetch("/data.json").then(res => res.json());
 
 const FriendDetails = () => {
+
+    const [loading, setLoading] = useState(true);
 
     const { addInteraction } = useInteractions();
 
@@ -18,6 +22,21 @@ const FriendDetails = () => {
 
     const expectedFriend = data.find((d) => String(d.id) === id);
     console.log(expectedFriend)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000); 
+
+        return () => clearTimeout(timer);
+    }, []);
+        if (loading) {
+            return (
+                <div className="flex justify-center items-center min-h-[60vh]">
+                    <HashLoader color="#244D3F" />
+                </div>
+            );
+        }
 
     return (
         <div className='w-9/12 mx-auto mt-20 grid grid-cols-3 gap-6'>
@@ -112,9 +131,14 @@ const FriendDetails = () => {
                         Quick Check-In
                     </h4>
                     <div className='grid grid-cols-3 gap-4'>
-                        <button onClick={() => addInteraction("Call", expectedFriend.name)} className='btn bg-base-200 flex flex-col h-20'><FiPhoneCall className='text-2xl'/>Call</button>
-                        <button onClick={() => addInteraction("Text", expectedFriend.name)} className='btn bg-base-200 flex flex-col h-20'><MdOutlineTextsms className='text-2xl'/>Text</button>
-                        <button onClick={() => addInteraction("Video", expectedFriend.name)} className='btn bg-base-200 flex flex-col h-20'><FiVideo className='text-2xl' />Video</button>
+                        <button onClick={() => {
+                            addInteraction("Call", expectedFriend.name); toast.success(`Call With ${expectedFriend.name} logged!`)}} className='btn bg-base-200 flex flex-col h-20'><FiPhoneCall className='text-2xl'/>Call</button>
+
+                        <button onClick={() => {
+                            addInteraction("Text", expectedFriend.name); toast.success(`Text With ${expectedFriend.name} logged!`)}} className='btn bg-base-200 flex flex-col h-20'><MdOutlineTextsms className='text-2xl'/>Text</button>
+
+                        <button onClick={() => {
+                            addInteraction("Video", expectedFriend.name); toast.success(`Video With ${expectedFriend.name} logged!`)}} className='btn bg-base-200 flex flex-col h-20'><FiVideo className='text-2xl' />Video</button>
                     </div>
                 </div>
             </div>

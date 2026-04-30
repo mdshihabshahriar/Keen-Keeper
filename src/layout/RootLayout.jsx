@@ -2,6 +2,7 @@ import { Outlet } from 'react-router';
 import Navbar from '../components/shared/Navbar';
 import Footer from '../components/shared/Footer';
 import { createContext, useContext, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 export const InteractionContext = createContext();
 export const useInteractions = () => useContext(InteractionContext);
@@ -25,6 +26,7 @@ const RootLayout = () => {
                 <Navbar></Navbar>
                 <Outlet></Outlet>
                 <Footer></Footer>
+                <ToastContainer></ToastContainer>
             </InteractionContext.Provider>
         </div>
     );
