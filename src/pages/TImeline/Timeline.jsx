@@ -20,7 +20,7 @@ const Timeline = () => {
         <div className='w-9/12 mx-auto mt-20 min-h-[40vh]'>
             <h2 className='text-3xl font-bold mb-6'>Timeline</h2>
             <div className="dropdown dropdown-start pb-3">
-                <div tabIndex={0} role="button" className="btn m-1">Filter Timeline <IoIosArrowDown /></div>
+                <div tabIndex={0} role="button" className="btn m-1">{filterType ? filterType : "Filter Timeline"} <IoIosArrowDown /></div>
                 <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
                     <li><a onClick={() => setFilterType("Call")}>Call</a></li>
                     <li><a onClick={() => setFilterType("Text")}>Text</a></li>
