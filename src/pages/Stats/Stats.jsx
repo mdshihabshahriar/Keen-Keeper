@@ -10,6 +10,22 @@ const Stats = () => {
         {name:"Video", value: interactions.filter(i => i.type === "Video").length, fill: "#00C49F"},
     ]
     const total = interactions.filter(i => i.type === "Call").length + interactions.filter(i => i.type === "Text").length + interactions.filter(i => i.type === "Video").length
+
+    if (total === 0) {
+        return (
+            <div className="w-9/12 mx-auto mt-10 min-h-[60vh] flex items-center justify-center">
+                <div className="text-center">
+                    <h2 className="text-2xl font-bold text-gray-500">
+                        No Data Yet
+                    </h2>
+                    <p className="text-gray-400 mt-2">
+                        Start interacting with your friends to see analytics.
+                    </p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className='w-9/12 md:w-7/12 mx-auto mt-10 min-h-[60vh]'>
             <h2 className='text-3xl md:text-4xl font-bold text-green-900 mt-4'>Friendship Analytics</h2>
