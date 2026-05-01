@@ -1,16 +1,38 @@
-# React + Vite
+# Keen Keeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Description
+Keen Keeper is a simple and modern web application that helps users track and manage their interactions (Call, Text, Video) with friends. It provides a clean interface to log activities and visualize communication patterns.
 
-Currently, two official plugins are available:
+## 🛠️ Technologies Used
+- React.js
+- Tailwind CSS
+- React Context API
+- Recharts
+- React Icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features
+- Track interactions like Call, Text, and Video easily  
+- Visualize interaction data using charts  
+- Manage and organize friends with interaction history
+- Fast and responsive UI
+- Clean and minimal design
+- Context API for state management
 
-## React Compiler
+## ⚙️ Installation & Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Clone the repository
+git clone https://github.com/mdshihabshahriar/Keen-Keeper.git
 
-## Expanding the ESLint configuration
+## Navigate to the project folder
+cd Keen-Keeper
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Install dependencies
+npm install
+
+## Run the development server
+npm run dev
+
+## 👨‍💻 Author
+
+MD. Shihab Shahriar  
+GitHub: https://github.com/mdshihabshahriar 
